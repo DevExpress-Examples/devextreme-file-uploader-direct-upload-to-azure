@@ -4,11 +4,15 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
-# FileUploader for DevExtreme - Direct Upload to Azure
+# DevExtreme FileUploader - Direct Upload to Azure
 
-The FileUploader component supports direct-upload to blob storages. This example illustrates how to configure the [uploadChunk](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxFileUploader/Configuration/#uploadChunk) property to upload a large file directly to Azure Blob Storage without using a user's web server. All APIs that implement access to Azure Blob Storage on the client are stored in the azure.file.system.js file (app.service.ts - for Angular framework).
+The FileUploader component supports direct upload to blob storage services. This example configures the [uploadChunk](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxFileUploader/Configuration/#uploadChunk) property to upload a large file directly to Azure Blob Storage (without using a web server). All APIs use to access Azure Blob Storage on the client are stored in the `azure.file.system.js` file (`app.service.ts` - for Angular framework).
 
-To implement file upload logic, use the [uploadChunk](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxFileUploader/Configuration/#uploadChunk) property to specify how to process a connection request to the storage.
+**IMPORTANT**
+
+The code snippets in this repository are for informational purposes only. Security should be your #1 priority when using Azure Blob storage. You should consult a security expert or apply accepted best practices to maintain the highest security posture for your DevExtreme-powered web application. Remember, a secure web app demands careful consideration/understanding of potential attack vectors, the configuration of your development environment, and security posture of third-party service providers.
+
+To implement file upload logic, use the [uploadChunk](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxFileUploader/Configuration/#uploadChunk) property and specify how to process a connection request to your storage service.
 
 ## Files to Review
 
