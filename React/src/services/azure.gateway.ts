@@ -1,6 +1,8 @@
-import {
-  FileEntry, AccessUrls, AzureResponse, CommandParams, isUrlResponse, RequestParams, AzureObject,
+import type {
+  FileEntry, AccessUrls, AzureResponse, CommandParams, RequestParams, AzureObject,
 } from './app.service.types';
+
+import { isUrlResponse } from './app.service.types';
 
 export class AzureGateway {
   endpointUrl: string;

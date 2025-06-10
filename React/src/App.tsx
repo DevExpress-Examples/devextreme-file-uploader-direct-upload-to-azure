@@ -1,13 +1,13 @@
-import React, {
+import {
   useCallback, useEffect, useMemo, useState,
 } from 'react';
 import './App.css';
 import 'devextreme/dist/css/dx.material.blue.light.compact.css';
 import FileUploader from 'devextreme-react/file-uploader';
 import LoadPanel from 'devextreme-react/load-panel';
-import UploadInfo from 'devextreme/file_management/upload_info';
+import type UploadInfo from 'devextreme/file_management/upload_info';
 import { AzureGateway } from './services/azure.gateway';
-import { AzureResponse } from './services/app.service.types';
+import type { AzureResponse } from './services/app.service.types';
 
 const endpointUrl = 'https://localhost:7021/api/file-uploader-azure-access';
 const loadPanelPosition = { of: '#file-uploader' };
