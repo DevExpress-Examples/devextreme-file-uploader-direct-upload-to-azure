@@ -5,9 +5,12 @@ import { lastValueFrom } from 'rxjs';
 import UploadInfo from 'devextreme/file_management/upload_info';
 import { AzureGateway } from './services/azure.gateway';
 import { AzureResponse } from './services/app.service.types';
+import { DxFileUploaderModule } from 'devextreme-angular/ui/file-uploader';
+import { DxLoadPanelModule } from 'devextreme-angular/ui/load-panel';
 
 @Component({
   selector: 'app-root',
+  imports: [DxFileUploaderModule, DxLoadPanelModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
