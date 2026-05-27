@@ -10,7 +10,7 @@ import { DxLoadPanelModule } from 'devextreme-angular/ui/load-panel';
 
 @Component({
   selector: 'app-root',
-  imports: [DxFileUploaderModule, DxLoadPanelModule],
+  imports: [DxFileUploaderModule, DxLoadPanelModule, NgFor],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
