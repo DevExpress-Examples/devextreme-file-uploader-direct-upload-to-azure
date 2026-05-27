@@ -17,6 +17,13 @@ function App(): JSX.Element {
   const [loadPanelVisible, setLoadPanelVisible] = useState<boolean>(true);
   const [wrapperClassName, setWrapperClassName] = useState<string>('');
 
+  const onRequestExecuted = useCallback(({ method, urlPath, queryString }: { method: string; urlPath: string; queryString: string }): void => {
+    const request = { method, urlPath, queryString };
+    setRequests((prevRequests) => [request, ...prevRequests]);
+  }, []);
+
+  const gateway = useMemo((): AzureGateway => new AzureGateway(endpointUrl, onRequestExecuted), []);
+
   const uploadChunk = useCallback((file: File, uploadInfo: UploadInfo): Promise<AzureResponse> | null => {
     let promise = null;
     if (uploadInfo.chunkIndex === 0) {
@@ -50,12 +57,6 @@ function App(): JSX.Element {
       })
       .catch(() => { });
   }, []);
-  const onRequestExecuted = useCallback(({ method, urlPath, queryString }: { method: string; urlPath: string; queryString: string }): void => {
-    const request = { method, urlPath, queryString };
-    setRequests((requests) => [request, ...requests]);
-  }, []);
-
-  const gateway = useMemo((): AzureGateway => new AzureGateway(endpointUrl, onRequestExecuted), []);
 
   return (
     <div id="wrapper" className={wrapperClassName}>
